@@ -1,4 +1,3 @@
-# WRC466130775A3661534B79534655
 #
 # Copyright (C) 2006-2009 Crawford Currie http://wikiring.com
 #
@@ -31,8 +30,6 @@ use Foswiki::Meta ();
 use Foswiki::Merge ();
 use Foswiki::Form ();
 use Foswiki::Time ();
-
-# %$TRACKINGCODE%
 
 our $haveStorable;
 our $details = 0; # set to 1 for detailed trace

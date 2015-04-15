@@ -41,8 +41,6 @@ use Foswiki::Plugins ();
 use Foswiki::Sandbox ();
 use Foswiki::Func ();
 
-# %$TRACKINGCODE%
-
 our $VERSION = '$Rev: 956 (22 Feb 2008) $';
 our $RELEASE = '24 Jul 2009';
 our $SHORTDESCRIPTION = <<DESC;

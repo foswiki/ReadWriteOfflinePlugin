@@ -1,4 +1,7 @@
 %META:TOPICINFO{author="ProjectContributor" date="1215625487" format="1.1" version="1.1"}%
+<!--
+   * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
+-->
 <table border='0'><tr><td>
 <img style="float:left" src="%ATTACHURL%/rwop.gif"></td><td>
 ---+!! %TOPIC%
