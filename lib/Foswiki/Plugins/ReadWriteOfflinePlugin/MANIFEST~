@@ -1,0 +1,15 @@
+# Release manifest for ReadWriteOfflinePlugin
+lib/Foswiki/Plugins/ReadWriteOfflinePlugin.pm 0644
+lib/Foswiki/Plugins/ReadWriteOfflinePlugin/Config.spec 0644
+lib/Foswiki/Plugins/ReadWriteOfflinePlugin/Store/Func.pm 0644
+lib/Foswiki/Plugins/ReadWriteOfflinePlugin/Store/RCS.pm 0644
+lib/Foswiki/Plugins/ReadWriteOfflinePlugin/Syncher.pm 0644
+lib/Foswiki/Plugins/ReadWriteOfflinePlugin/Test.pm 0644
+lib/Foswiki/Plugins/ReadWriteOfflinePlugin/UserAgent.pm 0644
+pub/System/ReadWriteOfflinePlugin/rwop.gif 0644
+pub/System/ReadWriteOfflinePlugin/synchoverview.draw 0644
+pub/System/ReadWriteOfflinePlugin/synchoverview.gif 0644
+pub/System/ReadWriteOfflinePlugin/synchp2p.draw 0644
+pub/System/ReadWriteOfflinePlugin/synchp2p.gif 0644
+pub/System/ReadWriteOfflinePlugin/synchstar.draw 0644
+pub/System/ReadWriteOfflinePlugin/synchstar.gif 0644

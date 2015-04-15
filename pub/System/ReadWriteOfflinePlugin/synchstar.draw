@@ -1,0 +1,46 @@
+
+    CH.ifa.draw.standard.StandardDrawing "no_attributes" 18 
+        CH.ifa.draw.figures.EllipseFigure "attributes" "attributes" 1 "FillColor" "Color" 255 216 170 87 74 79 76  
+        CH.ifa.draw.figures.RectangleFigure "attributes" "attributes" 2 "TextColor" "Color" 255 255 255 "FillColor" "Color" 35 142 104 14 14 89 32  
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 3 "TextColor" "Color" 255 255 255 "observed.figure" "Storable" REF 2 "FillColor" "Color" 255 199 158 21 24 "HelgaLaptop" "Helvetica" 0 12 0 REF 2 
+            CH.ifa.draw.standard.OffsetLocator -1 1 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.RectangleFigure "attributes" "attributes" 2 "TextColor" "Color" 255 255 255 "FillColor" "Color" 35 142 104 153 15 110 34  
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 3 "TextColor" "Color" 255 255 255 "observed.figure" "Storable" REF 6 "FillColor" "Color" 255 199 158 174 25 "AlainLaptop" "Helvetica" 0 12 0 REF 6 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.RectangleFigure "attributes" "attributes" 2 "TextColor" "Color" 255 255 255 "FillColor" "Color" 35 142 104 16 172 88 40  
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 3 "TextColor" "Color" 255 255 255 "observed.figure" "Storable" REF 10 "FillColor" "Color" 255 199 158 29 185 "ErikLaptop" "Helvetica" 0 12 0 REF 10 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.RectangleFigure "attributes" "attributes" 2 "TextColor" "Color" 255 255 255 "FillColor" "Color" 35 142 104 144 171 100 41  
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 3 "TextColor" "Color" 255 255 255 "observed.figure" "Storable" REF 14 "FillColor" "Color" 255 199 158 159 184 "FionaLaptop" "Helvetica" 0 12 0 REF 14 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 2 "observed.figure" "Storable" REF 1 "FillColor" "Color" 255 199 158 108 105 "ZeWiki" "Helvetica" 0 12 0 REF 1 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 76 172 103 142 
+            CH.ifa.draw.figures.ArrowTip  
+            CH.ifa.draw.figures.ArrowTip  0 0 0 
+            CH.ifa.draw.standard.ChopBoxConnector REF 10  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 1   
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 176 171 151 141 
+            CH.ifa.draw.figures.ArrowTip  
+            CH.ifa.draw.figures.ArrowTip  0 0 0 
+            CH.ifa.draw.standard.ChopBoxConnector REF 14  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 1   
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 71 46 103 83 
+            CH.ifa.draw.figures.ArrowTip  
+            CH.ifa.draw.figures.ArrowTip  0 0 0 
+            CH.ifa.draw.standard.ChopBoxConnector REF 2  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 1   
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 190 49 153 86 
+            CH.ifa.draw.figures.ArrowTip  
+            CH.ifa.draw.figures.ArrowTip  0 0 0 
+            CH.ifa.draw.standard.ChopBoxConnector REF 6  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 1   
+        CH.ifa.draw.figures.EllipseFigure "attributes" "attributes" 1 "FillColor" "Color" 255 216 170 266 79 36 34  
+        CH.ifa.draw.figures.RectangleFigure "attributes" "attributes" 1 "FillColor" "Color" 35 142 104 268 129 32 28  
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 1 "FillColor" "Color" 255 199 158 307 137 "Client" "Helvetica" 0 12 0 NULL NULL  
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 1 "FillColor" "Color" 255 199 158 310 90 "Server" "Helvetica" 0 12 0 NULL NULL   

@@ -1,0 +1,126 @@
+%META:TOPICINFO{author="ProjectContributor" date="1215625487" format="1.1" version="1.1"}%
+<table border='0'><tr><td>
+<img style="float:left" src="%ATTACHURL%/rwop.gif"></td><td>
+---+!! %TOPIC%
+%SHORTDESCRIPTION%
+</td></tr></table>
+
+%TOC%
+<img style="float:right" src="%ATTACHURL%/synchoverview.gif">
+This plugin lets you synchronise one Foswiki installation with another. The plugin uses standard HTTP protocols to communicate, so it doesn't need any special access (such as shell login) on the server. All that is required to synchronise two installations is that they both have the plugin installed. The synchronisation is peer-to-peer, and multiple Foswiki installations can be connected together in networks of arbitrary complexity.
+
+Unlike third-party tools such as Unison, the plugin knows all about Foswiki topics. It respects Foswiki permissions, and merges parallel changes using the standard Foswiki parallel change merging code.
+
+The plugin doesn't use any locks, so it's highly tolerant to faults in the synchronisation process. If anything goes wrong (such as a dropped link) the plugin can recover later without any histrionics or lost changes.
+
+The plugin works at a granularity of *webs*. You can synch each web with a different server if you want; or even synch a web with _multiple_ servers.
+
+Each installation maintains its own topic and attachment histories, which means that histories don't have to be synchronised between multiple servers. This is a compromise; it means that each installation has to have its own topic history, but it also avoids the risk of infinite update loops in multi-server network topologies.
+
+The plugin has one restriction out-of-the-box; it only runs with the
+RCSStoreContrib store. However facades for differerent stores can easily be
+added.
+
+---+ Synchronisation Applications
+---++ Server - Laptop
+<div style="float:right"><img src="%ATTACHURL%/synchstar.gif"></img></div>
+A typical application of synchronisation is where a user maintains a Foswiki installation on their laptop for personal use, but they want to synchronise with a (subset of a) larger Foswiki installation - for example, for working from home or when travelling. This requires a 'Star' network topology, where the main server sits at the centre and multiple laptops synchronise with it.
+
+Because the plugin does not synchronise histories, then each laptop will have its own history for the topics that are synchronised to the server. This allows the synchronisation to be very lightweight and fast, which makes it feasible to synchronise down dial-up lines. However it also means that complete topic histories are not the same on all installations.
+
+Most of the time this won't matter however. Most sites using this topology will consider the server histories to be the only true record for the topic, and laptop histories as 'throw away'.
+
+If you want your roaming users to have complete topic/attachment histories, then this plugin is not for you, and you should look at the Foswiki:Plugins.SyncContrib instead.
+
+---++ Peer - Peer
+<div style="float:right"> <img src="%ATTACHURL%/synchp2p.gif"></img> </div>Many companies maintain local servers that are full or partial mirrors of other servers, usually on other continents. The plugin can be valuable in this scenario, especially where you have webs of slowly changing content - such as process documentation, or Wikipedia-like content - that needs to be synchronised between different sites. In this scenario, multiple servers may be configured in a directed-graph topology to synchronise with each other. Again, each installation will have its own histories, but that's OK - the histories are a true reflection of what happened *at that site*.
+
+The diagram shows a complex network topology where a team wiki is hosted in the Paris office. Everyone synchronises the !WorkGroup web to their local machines. Also hosted is a Paris web that Gus synchronises with his laptop. Pete and Sam work in the sales office in Plockton, so they share a web for that office. They are all interested in cars, so they all synchronise the Cars web that Pete started on his laptop.
+
+Note that in the diagram the !WorkGroup web is always synchronised back to the !TeamWiki server. There's no particular reason for this; two of the other machines could equally have been synched together, and changes would eventually bubble through to everyone. It makes sense for most people to mentally associate a web with a server, and then synchronise with that server, but it's not strictly necessary. Just easier to get your head round.
+
+---++ Backup
+Another application synchronisation is where you want to maintain a totally passive backup of a topic on a read-only server somewhere else. I can't really recommend this plugin for that purpose, as the history is lost as part of the synchronisation process. You are recommended to look at the Foswiki:Plugins.SyncContrib for that sort of application.
+
+---+ Usage
+In the following we refer to the two Foswiki installations as the _client_ and the _server_. The client has to be configured to tell it where the server is, by setting up a few Foswiki configuration variables (see Installation, below). The server doesn't need to know anything about the client, though it has to have the plugin installed.
+
+Once you have the plugin installed on both Foswikis, and configured on the client, you can synchronise the client using the form below. You can include just this form in any other topic by using =%<nop>INCLUDE{"%WEB%.%TOPIC%"}%=.
+
+%STARTINCLUDE%
+<form method="post" action="%SCRIPTURLPATH{rest}%/ReadWriteOfflinePlugin/synch">
+| The *ID* of the remote server to synchronise with. | <select name="rid">%READWRITEOFFLINE_RIDS{separator="" format="<option>$rid</option>"}%</select>|
+| Comma-separated list of webs<sup>%RED%*%ENDCOLOR%</sup> to synchronise<sup>%GREEN%*%ENDCOLOR%</sup> | <input type="text" name="webs" size="60" value="%WEBLIST{separator=","}%"> |
+| Direction of transfers (rx is from remote server, tx is to remote server) | <select name="direction"><option>rxtx</option><option>rx</option><option>tx</option><option>none</option></select> |
+| <input type="submit" value="Synchronise Now" /> ||
+<sup>%RED%*%ENDCOLOR%</sup> The webs don't have to exist on both the client and the server before the first synchronisations (they will be created as necessary).%BR%
+<sup>%GREEN%*%ENDCOLOR%</sup>You can synchronise a web with a _different name_ on the client and the server by giving the client web name and the server web name separated by <code>=</code> - for example, =Clientwebname=Serverwebname=.
+</form>
+%STOPINCLUDE%
+
+(Just %INCLUDE this topic into any other topic to get just the form included)
+
+---++ Synching from the command-line
+You can also initiate a synch from the command line (or a cron job) as follows:
+<verbatim>
+$ cd bin
+$ perl -T rest ReadWriteOfflinePlugin/synch -webs web_one,web_two -rid ExampleServer
+</verbatim>
+This will synchronise the webs =web_one= and =web_two= with the server =ExampleServer=.
+
+---+ How it works
+Each client maintains a _synchronisation database_ which records the topic and attachment versions on the client and the server that were most recently determined to be identical.
+
+The synchronisation process looks to see if there is a newer version available from the server and, if the corresponding client file has not been updated since the last synchronisation, gets it from the server and checks in a new revision on the client. If there is a newer version on the client, but no newer version on the server, it sends a new revision to the server. If there are new versions of the same topic on the client *and* on the server, it merges the changes into a new common version, and puts that on both the client and the server. New topics/attachments on client or server are copied across. If a topic or attachment is deleted on one of the nodes, but still exists with the original name on the other (and has not been changed since the last synchronisation), then it will be deleted there as well.
+
+Note that in Foswiki, a rename operation is equivalent to a topic delete followed by a new topic creation, so that's what it will look like to a synchroniser.
+
+The communication with the server uses special entry points (using REST handlers) that are a lot more efficient than the standard =view= and =save= scripts used by the browser. These entry points are described in detail below. All accesses to topics on the server are done using the credentials provided in the plugin configuration.
+
+%X% It is generally safe to run multiple synchronisations simultaneously, though you may see reports of errors if the same topic has been modified on several clients. These errors are non-fatal, and will be recovered from at the next synch. However there is always a small risk of race conditions when multiple synchronising processes access the same files simultaneously, so you are recommended to try and keep synchronisations separated in time.
+
+The list of remote server IDs in the form above is generated by the %<nop>READWRITEOFFLINE_RIDS% Foswiki variable. This Foswiki variable will generate a list of known remote servers. It supports the following parameters:
+| =format="..."= | String format of each result. The variables =$rid= (remote id), =$duh= (default url host), =$sup= (script URL path) and =$ss= (script suffix) are expanded in addition to the standard =$n=, =$nop=, =$quot=, =$percnt= and =$dollar= escapes (see %TWIKIWEB%.FormattedSearch for details of these). |
+| =separator=","= | Default ",", use "$n" for a newline |
+
+---++ Public REST Handlers
+The plugin declares a number of REST handlers. To assist in understanding the
+function of the plugin, these are described in the [[%SCRIPTURL{view}%/%SYSTEMWEB%/PerlDoc?module=Foswiki::Plugins::ReadWriteOfflinePlugin][POD documentation]]= (only available if the plugin is installed).
+
+---++ Trash
+Foswiki doesn't actually support the deletion of webs, topics or attachments; it works by moving these data to a 'trash' web. Obviously if we try to synch such a trash web, we could get into all sorts of trouble. So each site running the plugin must nominate a web as the 'Trash' web for the plugin. By default this is the Foswiki standard Trash web, or it can be changed (in =configure=) to be another web reserved specifically for the plugin. Requests to synch a trash web are simply ignored.
+
+---+ Installation Instructions
+You do not need to install anything in the browser to use this extension. The following instructions are for the administrator who installs the extension on the server where Foswiki is running.
+
+This module is shipped with a fully automatic installer script. Simply download the archive to the top level directory of your Foswiki installation (the directory where AUTHORS, bin and lib are all found. Unzip the archive in this directory, and =perl <nop>ReadWriteOffline_installer= to run the installer script.
+
+As described above, one of the Foswiki installations (the one where the synchronisation is to be run) has to be identified as the _client_. The client needs some configuration variables defined for each remote system it will be synchronising with. Each _server_ that a client may be synching with must be identified by a string of letters and numbers, called the _remote ID_ of the server (you choose the string).
+
+ The server doesn't need any configuration beyond installing the plugin. Topics will be created on the server using the credentials given in the configuration.
+
+---++ Testing
+The plugin has a built-in self-test function. You can either test against the
+local server (loopback) or against a remote server.<br />
+<form name="test" action="%SCRIPTURL{rest}%/%TOPIC%/test">
+| Username (on this server) | <input type="text" name="username" value="%USERNAME%" /> |
+| Password | <input type="password" name="password" /> |
+| Node to synch with | <select name="rid"><option value="loopback">loopback</option>%READWRITEOFFLINE_RIDS{separator="" format="<option>$rid</option>"}%</select> |
+| <input type="submit" value="Test now" /> ||
+<input type="hidden" name="role" value="active" />
+</form>
+
+%META:FORM{name="PackageForm"}%
+%META:FIELD{name="Author" title="Author" value="CrawfordCurrie and MichaelTempest"}%
+%META:FIELD{name="Version" title="Version" value="%$VERSION%"}%
+%META:FIELD{name="Release" title="Release" value="%$RELEASE%"}%
+%META:FIELD{name="Copyright" value="2006-2015, CrawfordCurrie and MichaelTempest, All Rights Reserved"}%
+%META:FIELD{name="License" value="GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]])"}%
+%META:FIELD{name="Repository" value="https://github.com/foswiki/%$ROOTMODULE%"}%
+%META:FIELD{name="Home" value="http://foswiki.org/Extensions/%$ROOTMODULE%"}%
+%META:FIELD{name="Support" value="http://foswiki.org/Support/%$ROOTMODULE%"}%
+%META:FIELD{name="Repository" title="Repository" value="https://github.com/foswiki/distro"}%
+%META:FILEATTACHMENT{name="rwop.gif" attr="h" comment="Logo"}%
+%META:FILEATTACHMENT{name="synchoverview.gif" attr="h" comment="Logo"}%
+%META:FILEATTACHMENT{name="synchstar.gif" attr="h" comment="Star topology"}%
+%META:FILEATTACHMENT{name="synchp2p.gif" attr="h" comment="Peer-2-peer topology"}%

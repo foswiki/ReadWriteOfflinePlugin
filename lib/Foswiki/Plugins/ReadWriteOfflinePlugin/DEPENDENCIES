@@ -1,0 +1,2 @@
+LWP,>0,cpan,Optional, LWP library from the CPAN repository
+File::Path,>0,cpan,Optional, required for tests. Library from CPAN

@@ -1,0 +1,138 @@
+
+    CH.ifa.draw.standard.StandardDrawing "no_attributes" 52 
+        CH.ifa.draw.figures.RectangleFigure "attributes" "attributes" 2 "TextColor" "Color" 255 255 255 "FillColor" "Color" 0 0 255 21 161 78 33  
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 3 "observed.figure" "Storable" REF 1 "TextColor" "Color" 255 255 255 "FillColor" "Color" 255 199 158 29 170 "GusLaptop" "Helvetica" 0 12 0 REF 1 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.RectangleFigure "attributes" "attributes" 1 "FillColor" "Color" 255 216 170 385 102 78 33  
+        CH.ifa.draw.figures.RectangleFigure "no_attributes" 220 207 78 33  
+        CH.ifa.draw.figures.RectangleFigure "attributes" "attributes" 2 "TextColor" "Color" 255 255 255 "FillColor" "Color" 64 64 64 170 10 78 33  
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 2 "observed.figure" "Storable" REF 5 "FillColor" "Color" 255 199 158 388 111 "SamDesktop" "Helvetica" 0 12 0 REF 5 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 2 "observed.figure" "Storable" REF 6 "FillColor" "Color" 255 199 158 230 216 "PeteLaptop" "Helvetica" 0 12 0 REF 6 
+            CH.ifa.draw.standard.OffsetLocator 3 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 3 "observed.figure" "Storable" REF 7 "TextColor" "Color" 255 255 255 "FillColor" "Color" 64 64 64 181 19 "TeamWiki" "Helvetica" 0 12 0 REF 7 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.EllipseFigure "attributes" "attributes" 2 "TextColor" "Color" 255 255 255 "FillColor" "Color" 64 64 64 167 60 76 51  
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 3 "observed.figure" "Storable" REF 17 "TextColor" "Color" 255 255 255 "FillColor" "Color" 64 64 64 173 78 "WorkGroup" "Helvetica" 0 12 0 REF 17 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.EllipseFigure "attributes" "attributes" 2 "TextColor" "Color" 255 255 255 "FillColor" "Color" 64 64 64 81 30 51 37  
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 3 "observed.figure" "Storable" REF 21 "TextColor" "Color" 255 255 255 "FillColor" "Color" 64 64 64 92 41 "Paris" "Helvetica" 0 12 0 REF 21 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 164 126 185 106 
+            CH.ifa.draw.figures.ArrowTip  
+            CH.ifa.draw.figures.ArrowTip  0 0 0 
+            CH.ifa.draw.figures.ChopEllipseConnector 
+                CH.ifa.draw.figures.EllipseFigure "attributes" "attributes" 1 "FillColor" "Color" 0 0 255 105 121 76 51   
+            CH.ifa.draw.figures.ChopEllipseConnector REF 17   
+        CH.ifa.draw.figures.LineConnection "attributes" "attributes" 2 "TextColor" "Color" 255 255 255 "FillColor" "Color" 64 64 64 2 68 122 98 65 
+            CH.ifa.draw.figures.ArrowTip  
+            CH.ifa.draw.figures.ArrowTip  0 0 0 
+            CH.ifa.draw.figures.ChopEllipseConnector 
+                CH.ifa.draw.figures.EllipseFigure "attributes" "attributes" 2 "TextColor" "Color" 255 255 255 "FillColor" "Color" 0 0 255 32 120 56 31   
+            CH.ifa.draw.figures.ChopEllipseConnector REF 21   
+        CH.ifa.draw.figures.LineConnection "attributes" "attributes" 2 "TextColor" "Color" 255 255 255 "FillColor" "Color" 64 64 64 2 170 34 130 44 NULL NULL 0 0 0 
+            CH.ifa.draw.standard.ChopBoxConnector REF 7  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 21   
+        CH.ifa.draw.figures.LineConnection "attributes" "attributes" 2 "TextColor" "Color" 255 255 255 "FillColor" "Color" 64 64 64 2 207 43 207 61 NULL NULL 0 0 0 
+            CH.ifa.draw.standard.ChopBoxConnector REF 7  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 17   
+        CH.ifa.draw.figures.EllipseFigure "attributes" "attributes" 2 "TextColor" "Color" 255 255 255 "FillColor" "Color" 0 0 255 30 206 51 32  
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 3 "observed.figure" "Storable" REF 43 "TextColor" "Color" 255 255 255 "FillColor" "Color" 255 199 158 43 215 "Cars" "Helvetica" 0 12 0 REF 43 
+            CH.ifa.draw.standard.OffsetLocator 1 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.LineConnection "attributes" "attributes" 1 "TextColor" "Color" 255 255 255 2 58 194 57 207 NULL NULL 0 0 0 
+            CH.ifa.draw.standard.ChopBoxConnector REF 1  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 43   
+        CH.ifa.draw.figures.LineConnection "attributes" "attributes" 1 "TextColor" "Color" 255 255 255 2 78 228 233 271 
+            CH.ifa.draw.figures.ArrowTip  
+            CH.ifa.draw.figures.ArrowTip  0 0 0 
+            CH.ifa.draw.figures.ChopEllipseConnector REF 43  
+            CH.ifa.draw.figures.ChopEllipseConnector 
+                CH.ifa.draw.figures.EllipseFigure "no_attributes" 230 260 55 34    
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 228 142 215 109 
+            CH.ifa.draw.figures.ArrowTip  
+            CH.ifa.draw.figures.ArrowTip  0 0 0 
+            CH.ifa.draw.figures.ChopEllipseConnector 
+                CH.ifa.draw.figures.EllipseFigure "no_attributes" 199 140 76 51   
+            CH.ifa.draw.figures.ChopEllipseConnector REF 17   
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 345 66 242 81 
+            CH.ifa.draw.figures.ArrowTip  
+            CH.ifa.draw.figures.ArrowTip  0 0 0 
+            CH.ifa.draw.figures.ChopEllipseConnector 
+                CH.ifa.draw.figures.EllipseFigure "attributes" "attributes" 1 "FillColor" "Color" 255 216 170 343 36 76 51   
+            CH.ifa.draw.figures.ChopEllipseConnector REF 17   REF 35 
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 3 "observed.figure" "Storable" REF 35 "TextColor" "Color" 255 255 255 "FillColor" "Color" 255 199 158 46 128 "Paris" "Helvetica" 0 12 0 REF 35 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.LineConnection "attributes" "attributes" 1 "TextColor" "Color" 255 255 255 2 60 161 60 150 NULL NULL 0 0 0 
+            CH.ifa.draw.standard.ChopBoxConnector REF 1  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 35   REF 29 REF 60 REF 55 
+        CH.ifa.draw.figures.LineConnection "attributes" "attributes" 1 "TextColor" "Color" 255 255 255 2 99 162 111 158 NULL NULL 0 0 0 
+            CH.ifa.draw.standard.ChopBoxConnector REF 1  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 29   
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 246 189 252 207 NULL NULL 0 0 0 
+            CH.ifa.draw.figures.ChopEllipseConnector REF 60  
+            CH.ifa.draw.standard.ChopBoxConnector REF 6   
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 258 261 258 240 NULL NULL 0 0 0 
+            CH.ifa.draw.figures.ChopEllipseConnector REF 55  
+            CH.ifa.draw.standard.ChopBoxConnector REF 6   
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 2 "observed.figure" "Storable" REF 55 "FillColor" "Color" 255 199 158 244 270 "Cars" "Helvetica" 0 12 0 REF 55 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 3 "observed.figure" "Storable" REF 29 "TextColor" "Color" 255 255 255 "FillColor" "Color" 255 199 158 111 139 "WorkGroup" "Helvetica" 0 12 0 REF 29 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 2 "observed.figure" "Storable" REF 60 "FillColor" "Color" 255 199 158 205 158 "WorkGroup" "Helvetica" 0 12 0 REF 60 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.EllipseFigure "attributes" "attributes" 1 "FillColor" "Color" 255 216 170 302 99 60 39  REF 66 
+        CH.ifa.draw.figures.EllipseFigure "attributes" "attributes" 1 "FillColor" "Color" 255 216 170 390 158 50 33  
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 276 266 398 185 
+            CH.ifa.draw.figures.ArrowTip  
+            CH.ifa.draw.figures.ArrowTip  0 0 0 
+            CH.ifa.draw.figures.ChopEllipseConnector REF 55  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 93   
+        CH.ifa.draw.figures.EllipseFigure "no_attributes" 288 163 61 38  
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 282 207 299 196 NULL NULL 0 0 0 
+            CH.ifa.draw.standard.ChopBoxConnector REF 6  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 99   
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 411 102 398 83 NULL NULL 0 0 0 
+            CH.ifa.draw.standard.ChopBoxConnector REF 5  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 66   
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 385 118 362 118 NULL NULL 0 0 0 
+            CH.ifa.draw.standard.ChopBoxConnector REF 5  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 92   
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 421 135 418 159 NULL NULL 0 0 0 
+            CH.ifa.draw.standard.ChopBoxConnector REF 5  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 93   
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 2 "observed.figure" "Storable" REF 93 "FillColor" "Color" 255 199 158 402 167 "Cars" "Helvetica" 0 12 0 REF 93 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 2 "observed.figure" "Storable" REF 66 "FillColor" "Color" 255 199 158 349 54 "WorkGroup" "Helvetica" 0 12 0 REF 66 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 2 "observed.figure" "Storable" REF 99 "FillColor" "Color" 255 199 158 294 175 "Plockton" "Helvetica" 0 12 0 REF 99 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.LineConnection "no_attributes" 2 322 164 329 137 
+            CH.ifa.draw.figures.ArrowTip  
+            CH.ifa.draw.figures.ArrowTip  0 0 0 
+            CH.ifa.draw.figures.ChopEllipseConnector REF 99  
+            CH.ifa.draw.figures.ChopEllipseConnector REF 92   
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 2 "observed.figure" "Storable" REF 92 "FillColor" "Color" 255 199 158 308 111 "Plockton" "Helvetica" 0 12 0 REF 92 
+            CH.ifa.draw.standard.OffsetLocator 0 0 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.RectangleFigure "attributes" "attributes" 1 "FillColor" "Color" 255 199 158 363 237 22 23  
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 2 "observed.figure" "Storable" REF 129 "FillColor" "Color" 255 199 158 395 242 "Installation" "Helvetica" 0 12 0 REF 129 
+            CH.ifa.draw.standard.OffsetLocator 51 1 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5    
+        CH.ifa.draw.figures.EllipseFigure "attributes" "attributes" 1 "FillColor" "Color" 255 199 158 362 268 24 25  
+        CH.ifa.draw.figures.TextFigure "attributes" "attributes" 2 "observed.figure" "Storable" REF 133 "FillColor" "Color" 255 199 158 394 274 "Web" "Helvetica" 0 12 0 REF 133 
+            CH.ifa.draw.standard.OffsetLocator 32 1 
+                CH.ifa.draw.standard.RelativeLocator 0.5 0.5     
